@@ -45,3 +45,44 @@ Ans - It works also on the same principle of last-write-wins conflict resolution
 
 ## Realtime updates
 We can make use of Websockets to listen for any upcoming message from server and update the UI accordingly.
+
+Example Code:-
+```js
+// Create a WebSocket connection to the server
+let socket = new WebSocket("ws://your-websocket-server.com");
+
+// Connection established
+socket.onopen = function(event) {
+  console.log("Connection established ", event);
+};
+
+// Listen for messages from the server
+socket.onmessage = function(event) {
+  console.log("New message from server ", event.data);
+
+  // Assuming the server sends a JSON string that includes an action type
+  let serverMessage = JSON.parse(event.data);
+
+  if (serverMessage.action === 'cardMoved') {
+    // Update the UI to reflect the card move
+    moveCard(serverMessage.cardId, serverMessage.newPosition);
+  }
+};
+
+// Function to send a message to the server when a card is moved
+function cardMoved(cardId, newPosition) {
+  let message = {
+    action: 'cardMoved',
+    cardId: cardId,
+    newPosition: newPosition
+  };
+
+  // Send the message as a JSON string
+  socket.send(JSON.stringify(message));
+}
+
+// Function to update the UI when a card is moved
+function moveCard(cardId, newPosition) {
+}
+
+```

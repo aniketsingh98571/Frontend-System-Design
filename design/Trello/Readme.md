@@ -15,7 +15,7 @@
 2. Handle updates when two drops happens one after another of same card.
 
 ## Architecture
-![Trello HLD]('../assets/Trello_HLD.png')
+![Trello HLD](../assets/Trello_HLD.png)
 
 ## Rendering Approach
 SSR + hydration (Next.js)

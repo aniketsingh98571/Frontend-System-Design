@@ -21,6 +21,7 @@
 SSR + hydration (Next.js)
 
 ## Data Model
+```js
 **Lists** - Server - [{
    list_id:"1",
    list_name:"Urgent"
@@ -32,7 +33,7 @@ SSR + hydration (Next.js)
 }]
 **NewList** -  Client - {}
 **NewCard** - Client - {}
-
+```
 
 ## Handling Concurrency (NFR)
 1.  When two people drag and drop at same time the same card?

@@ -22,17 +22,17 @@ SSR + hydration (Next.js)
 
 ## Data Model
 ```js
-**Lists** - Server - [{
+Lists - Server - [{
    list_id:"1",
    list_name:"Urgent"
 }] 
-**Cards** -  Server - [{
+Cards -  Server - [{
     list_id:"1",
     id:"2",
     title:"Create card"
 }]
-**NewList** -  Client - {}
-**NewCard** - Client - {}
+NewList -  Client - {}
+NewCard - Client - {}
 ```
 
 ## Handling Concurrency (NFR)
